@@ -36,6 +36,12 @@ impl<T> List<T> {
     }
 }
 
+impl<T> Default for List<T> {
+    fn default() -> Self {
+        Self::new()
+    }
+}
+
 impl<T> Drop for List<T> {
     fn drop(&mut self) {
         let mut head = self.head.take();
